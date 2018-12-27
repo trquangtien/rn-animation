@@ -4,6 +4,7 @@ import FadeView from './fade-view.component';
 import Left2RightView from './left2right-view.component';
 import MultipleAnimation from './multiple-animation.view.component';
 import Interpolate from './interpolate.component';
+import Transform from './transform.component';
 
 export default class Animation extends React.Component {
   render() {
@@ -19,6 +20,7 @@ export default class Animation extends React.Component {
         <Left2RightView />
         <MultipleAnimation />
         <Interpolate />
+        <Transform />
       </View>
     );
   }

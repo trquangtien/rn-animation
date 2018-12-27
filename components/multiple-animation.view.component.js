@@ -28,7 +28,7 @@ export default class MultipleAnimation extends React.Component {
         <Animated.View
           style={{
             width: 300,
-            height: 100,
+            height: 70,
             backgroundColor: 'blue',
             marginLeft: marginLeft1
           }}>
@@ -38,7 +38,7 @@ export default class MultipleAnimation extends React.Component {
         <Animated.View
           style={{
             width: 300,
-            height: 100,
+            height: 70,
             backgroundColor: 'red',
             marginLeft: marginLeft2
           }}>

@@ -19,18 +19,18 @@ export default class Interpolate extends React.Component {
 
   render() {
     let backgroundColor = this.state.colorAnim.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['purple', 'yellow']
+      inputRange: [0, 0.5, 1],
+      outputRange: ['green', 'pink', 'blue']
     });
 
     return (
       <Animated.View
         style={{
           width: 300,
-          height: 100,
+          height: 70,
           backgroundColor
         }}>
-        <Text>Interpolate Component</Text>
+        <Text>Interpolate Loop Component</Text>
       </Animated.View>
     );
   }
