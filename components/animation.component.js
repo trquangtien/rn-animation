@@ -5,6 +5,7 @@ import Left2RightView from './left2right-view.component';
 import MultipleAnimation from './multiple-animation.view.component';
 import Interpolate from './interpolate.component';
 import Transform from './transform.component';
+import ReuseComponent from './reuse.component';
 
 export default class Animation extends React.Component {
   render() {
@@ -21,6 +22,11 @@ export default class Animation extends React.Component {
         <MultipleAnimation />
         <Interpolate />
         <Transform />
+
+        {/* Reuse component */}
+        <ReuseComponent style={{ width: 200, justifyContent: 'center', alignItems: 'center', backgroundColor: 'yellow' }}>
+          <Text>Reuse Component</Text>
+        </ReuseComponent>
       </View>
     );
   }
