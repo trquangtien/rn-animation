@@ -22,7 +22,7 @@ export default class Left2RightView extends React.Component {
       <Animated.View
         style={{
           width: 300,
-          height: 200,
+          height: 100,
           backgroundColor: 'pink',
           marginLeft
         }}>

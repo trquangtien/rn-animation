@@ -10,7 +10,7 @@ export default class FadeView extends React.Component {
   }
 
   componentDidMount() {
-    Animated.timing(this.state.fadeAnim, { toValue: 1, duration: 5000 }).start();
+    Animated.timing(this.state.fadeAnim, { toValue: 1, duration: 3000 }).start();
   }
 
   render() {
@@ -20,7 +20,7 @@ export default class FadeView extends React.Component {
       <Animated.View
         style={{
           width: 300,
-          height: 200,
+          height: 100,
           backgroundColor: 'green',
           opacity
         }}>
