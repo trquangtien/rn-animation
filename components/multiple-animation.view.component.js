@@ -6,22 +6,29 @@ export default class MultipleAnimation extends React.Component {
     super(props);
     this.state = {
       slideAnim1: new Animated.Value(-1000),
+      fadeAnim: new Animated.Value(0),
       slideAnim2: new Animated.Value(-1000)
     };
   }
 
   componentDidMount() {
-    const anim1 = Animated.timing(this.state.slideAnim1, { toValue: 0, duration: 1000 });
-    const anim2 = Animated.timing(this.state.slideAnim2, { toValue: 0, duration: 1000 });
+    let slideAnim1 = Animated.timing(this.state.slideAnim1, { toValue: 0, duration: 1000 });
+    let slideAnim2 = Animated.timing(this.state.slideAnim2, { toValue: 0, duration: 1000 });
 
-    // Animated.sequence([anim1, anim2]).start(); // sequence
-    // Animated.parallel([anim1, anim2]).start(); // parallel
-    Animated.stagger(200, [anim1, anim2]).start(); // parallel and delay for each animation by time
+    let fadeAnim = Animated.timing(this.state.fadeAnim, { toValue: 1, duration: 2500 });
+
+    // Animated.sequence([slideAnim1, slideAnim2]).start(); // sequence
+    // Animated.parallel([slideAnim1, slideAnim2]).start(); // parallel
+
+    let staggerAnimation = Animated.stagger(200, [slideAnim1, slideAnim2]); // parallel and delay for each animation by time
+    Animated.parallel([staggerAnimation, fadeAnim]).start();
   }
 
   render() {
-    const marginLeft1 = this.state.slideAnim1;
-    const marginLeft2 = this.state.slideAnim2;
+    let marginLeft1 = this.state.slideAnim1;
+    let marginLeft2 = this.state.slideAnim2;
+
+    let opacity = this.state.fadeAnim;
 
     return (
       <View>
@@ -30,7 +37,8 @@ export default class MultipleAnimation extends React.Component {
             width: 300,
             height: 70,
             backgroundColor: 'blue',
-            marginLeft: marginLeft1
+            marginLeft: marginLeft1,
+            opacity
           }}>
           <Text>Component 1</Text>
         </Animated.View>
@@ -40,7 +48,8 @@ export default class MultipleAnimation extends React.Component {
             width: 300,
             height: 70,
             backgroundColor: 'red',
-            marginLeft: marginLeft2
+            marginLeft: marginLeft2,
+            opacity
           }}>
           <Text>Component 2</Text>
         </Animated.View>
