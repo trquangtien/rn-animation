@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Text } from 'react-native';
+import { Animated, Text, Easing } from 'react-native';
 
 export default class Left2RightView extends React.Component {
   constructor(props) {
@@ -8,7 +8,12 @@ export default class Left2RightView extends React.Component {
   }
 
   componentDidMount() {
-    Animated.timing(this.state.slideAnim, { toValue: 0, duration: 2000 }).start();
+    // timing
+    // Animated.timing(this.state.slideAnim, { toValue: 0, duration: 2500 }).start();
+    // Animated.timing(this.state.slideAnim, { toValue: 0, duration: 2500, easing: Easing.bounce }).start();
+
+    // spring
+    Animated.spring(this.state.slideAnim, { toValue: 0 }).start();
   }
 
   render() {
